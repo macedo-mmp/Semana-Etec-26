@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Semana Etec: envie uma foto e aplique filtros como preto e branco, cores invertidas e mais.">
+    <title>Semana Etec – Aplicador de Filtros</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Aba lateral: puxador + ícones de navegação (Galeria / Aplicador de filtros) -->
+    <nav class="aba-lateral" id="abaLateral" aria-label="Navegação principal">
+        <button type="button" class="aba-puxador" id="abaPuxador" aria-expanded="false" aria-controls="abaItens" aria-label="Abrir menu de páginas">
+            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </button>
+        <div class="aba-itens" id="abaItens">
+            <a href="index.html" class="aba-item" data-rotulo="Galeria" aria-label="Galeria">
+                <i class="bi bi-images" aria-hidden="true"></i>
+            </a>
+            <a href="filtros.html" class="aba-item" data-rotulo="Aplicador de filtros" aria-label="Aplicador de filtros" aria-current="page">
+                <i class="bi bi-magic" aria-hidden="true"></i>
+            </a>
+        </div>
+    </nav>
+
+    <header class="topo">
+        <img id="logo" src="./imgs/LOGO-ETEC.webp" alt="Logotipo da Etec Lauro Gomes">
+        <div class="topo-texto">
+            <h1>Aplicador de Filtros</h1>
+            <p>Envie uma foto e escolha um filtro para ver o resultado ao lado.</p>
+        </div>
+    </header>
+
+    <main class="container py-5">
+
+        <!-- Os dois quadrados: original (esquerda) e com filtro (direita) -->
+        <section class="comparador" aria-label="Comparação entre a imagem original e a imagem com filtro">
+
+            <div class="comparador-lado">
+                <div class="moldura-grande" id="molduraOriginal">
+                    <label class="envio" id="envio" for="arquivo">
+                        <i class="bi bi-cloud-arrow-up" aria-hidden="true"></i>
+                        <strong>Enviar imagem</strong>
+                        <span>Clique aqui ou arraste uma foto</span>
+                    </label>
+                    <img id="imgOriginal" alt="Imagem enviada, sem filtro" hidden>
+                    <button type="button" class="btn-foto btn-trocar" id="btnTrocar" aria-label="Trocar imagem" title="Trocar imagem" hidden>
+                        <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <span class="selo original"><i class="bi bi-image"></i> Original</span>
+            </div>
+
+            <div class="comparador-lado">
+                <div class="moldura-grande" id="molduraResultado">
+                    <div class="quadro-vazio" id="vazioResultado">
+                        <i class="bi bi-magic" aria-hidden="true"></i>
+                        <span>O resultado com filtro aparece aqui</span>
+                    </div>
+                    <img id="imgResultado" alt="Imagem com o filtro aplicado" hidden>
+                </div>
+                <span class="selo ia" id="seloResultado"><i class="bi bi-magic"></i> <span id="nomeFiltro">Original</span></span>
+            </div>
+        </section>
+
+        <input type="file" id="arquivo" accept="image/*" hidden>
+
+        <!-- Linha de filtros -->
+        <section class="filtros-area" aria-label="Filtros disponíveis">
+            <h2 class="filtros-titulo">Filtros</h2>
+            <div class="filtros-linha" id="filtrosLinha" role="radiogroup" aria-label="Escolha um filtro"></div>
+        </section>
+
+        <div class="acoes">
+            <button type="button" class="btn-acao" id="btnBaixar" disabled>
+                <i class="bi bi-download" aria-hidden="true"></i> Baixar imagem
+            </button>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-grid">
+                <div class="rodape-col">
+                    <h2 class="rodape-titulo">Endereço</h2>
+                    <address>
+                        Etec Lauro Gomes<br>
+                        Av. Pereira Barreto, 400 – Baeta Neves<br>
+                        São Bernardo do Campo – SP, 09751-000
+                    </address>
+                </div>
+                <div class="rodape-col">
+                    <h2 class="rodape-titulo">Telefone</h2>
+                    <p><a href="tel:+551141252288"><i class="bi bi-telephone"></i> (11) 4125-2288</a></p>
+                </div>
+                <div class="rodape-col">
+                    <h2 class="rodape-titulo">E-mail</h2>
+                    <p><a href="mailto:e010dir@cps.sp.gov.br"><i class="bi bi-envelope"></i> e010dir@cps.sp.gov.br</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="aba.js" defer></script>
+    <script src="filtros.js" defer></script>
+</body>
+</html>

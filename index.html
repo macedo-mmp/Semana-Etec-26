@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Semana Etec: toque no botão de cada foto e veja o original, a versão com IA e a versão no Photoshop juntos.">
+    <title>Semana Etec – Filtros</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grot5esque:wght@600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <!-- Aba lateral: puxador + ícones de navegação (Galeria / Aplicador de filtros) -->
+    <nav class="aba-lateral" id="abaLateral" aria-label="Navegação principal">
+        <button type="button" class="aba-puxador" id="abaPuxador" aria-expanded="false" aria-controls="abaItens" aria-label="Abrir menu de páginas">
+            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </button>
+        <div class="aba-itens" id="abaItens">
+            <a href="index.html" class="aba-item" data-rotulo="Galeria" aria-label="Galeria" aria-current="page">
+                <i class="bi bi-images" aria-hidden="true"></i>
+            </a>
+            <a href="filtros.html" class="aba-item" data-rotulo="Aplicador de filtros" aria-label="Aplicador de filtros">
+                <i class="bi bi-magic" aria-hidden="true"></i>
+            </a>
+        </div>
+    </nav>
+
+    <header class="topo">
+        <img id="logo" src="./imgs/LOGO-ETEC.webp" alt="Logotipo da Etec Lauro Gomes">
+        <div class="topo-texto">
+            <h1>Semana da Etec</h1>
+            <p>Toque no botão de ajustes de cada foto para ver as três versões lado a lado.</p>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <div id="galeria" class="galeria"></div>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-grid">
+                <div class="rodape-col">
+                    <h2 class="rodape-titulo">Endereço</h2>
+                    <address>
+                        Etec Lauro Gomes<br>
+                        Av. Pereira Barreto, 400 – Baeta Neves<br>
+                        São Bernardo do Campo – SP, 09751-000
+                    </address>
+                </div>
+                <div class="rodape-col">
+                    <h2 class="rodape-titulo">Telefone</h2>
+                    <p><a href="tel:+551141252288"><i class="bi bi-telephone"></i> (11) 4125-2288</a></p>
+                </div>
+                <div class="rodape-col">
+                    <h2 class="rodape-titulo">E-mail</h2>
+                    <p><a href="mailto:e010dir@cps.sp.gov.br"><i class="bi bi-envelope"></i> e010dir@cps.sp.gov.br</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="aba.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
